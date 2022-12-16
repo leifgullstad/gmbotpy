@@ -13,13 +13,13 @@ def home():
 @app.route('/', methods=['POST'])
 def receive():
     print('Incoming message:')
-    print(request.form)
-    data = request.form
+    print(request.get_json())
+    data = request.get_json()
 
-    # # Prevent self-reply
-    # if data['sender_type'] != 'bot':
-    #     if data['text'].startswith('/ping'):
-    # send(data['name'] + ' pinged me!')
+    # Prevent self-reply
+    if data['sender_type'] != 'bot':
+        if data['text'].startswith('/ping'):
+            send(data['name'] + ' pinged me!')
 
     return 'ok', 200
 
