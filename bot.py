@@ -3,6 +3,9 @@ import requests
 
 from flask import Flask, request
 
+os.environ["BOT_ID"] = "7a825a4574e5e534bd9b3ba9c5"
+os.environ["PORT"] = "8080"
+
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
