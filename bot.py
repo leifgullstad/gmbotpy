@@ -13,7 +13,8 @@ def home():
 @app.route('/', methods=['POST'])
 def receive():
     print('Incoming message:')
-    print(data)
+    print(request.form)
+    data = request.form
 
     # Prevent self-reply
     if data['sender_type'] != 'bot':
