@@ -1,1 +1,1 @@
-FLASK_APP=bot.py flask run -p 8080
+FLASK_APP=bot.py flask run -h 0.0.0.0 -p 8080
