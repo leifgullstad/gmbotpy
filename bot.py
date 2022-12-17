@@ -16,7 +16,7 @@ def home():
 @app.route('/', methods=['POST'])
 def receive():
     print('Incoming message:')
-    print(request.get_json())
+    print(request.form)
     data = request.get_json()
 
     # Prevent self-reply
