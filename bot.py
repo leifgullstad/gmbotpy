@@ -54,7 +54,7 @@ def get_next_10():
         # Call the Calendar API
         now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
         print('Getting the upcoming 10 events')
-        events_result = service.events().list(calendarId='primary', timeMin=now,
+        events_result = service.events().list(calendarId='umh7cerge6kqga6c88i0117j24@group.calendar.google.com', timeMin=now,
                                               maxResults=10, singleEvents=True,
                                               orderBy='startTime').execute()
         events = events_result.get('items', [])
@@ -83,7 +83,7 @@ def receive():
     if data['sender_type'] != 'bot':
         if data['text'].startswith('/ping'):
             send(data['name'] + ' pinged me!')
-        elif data['text'].startwwith('/schedule'):
+        elif data['text'].startswith('/schedule'):
             get_next_10()
 
     return 'ok', 200
