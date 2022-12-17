@@ -20,6 +20,9 @@ def receive():
     data = request.get_json()
     print(data['text'])
 
+    if data['name'] == "Cole Wohlfiel":
+        send(data['name'] + "sucks, lol")
+
     # Prevent self-reply
     if data['sender_type'] != 'bot':
         if data['text'].startswith('/ping'):
