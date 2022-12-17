@@ -35,4 +35,5 @@ def send(msg):
         'bot_id': os.getenv('BOT_ID'),
         'text': msg,
     }
-    r = requests.post(url, data=data)
+    r = requests.post(url, json=data)
+    print("GroupMe response: " + str(r))
