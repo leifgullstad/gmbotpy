@@ -50,6 +50,9 @@ coverage.xml
 # Translations
 *.mo
 *.pot
+credentials.json
+token.json
+quickstart.py
 
 # Django stuff:
 *.log
